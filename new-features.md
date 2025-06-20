@@ -1,6 +1,10 @@
 # User Stories voor CodeCampus Dashboard
 
-## Must-have User Stories
+Na het oplossen van alle bugs kunnen teams kiezen uit onderstaande user stories om nieuwe features toe te voegen. Verdeel het werk eerlijk en kies features die bij jullie vaardigheidsniveau passen.
+
+---
+
+## Must-have Features (Prioriteit 1)
 
 ### User Story 1: Zoekfunctionaliteit
 
@@ -48,73 +52,177 @@
 - Bij selectie worden alleen relevante cursussen getoond
 - Er is een optie om alle filters te wissen
 
-## Should-have User Stories
+---
 
-### User Story 5: Favorieten markeren
+## Should-have Features (Prioriteit 2)
 
-**Als gebruiker** wil ik **cursussen kunnen markeren als favoriet** zodat ik **een persoonlijke collectie kan maken van cursussen die me interesseren**.
+### User Story 5: Gebruikersauthenticatie (Login/Register)
 
-**Acceptatiecriteria:**
-
-- Elke cursuskaart heeft een "favoriet" knop (bijv. ster-icoon)
-- Favorieten worden opgeslagen in localStorage
-- Er is een apart filter/tab om alleen favorieten te tonen
-- Het aantal favorieten wordt getoond in de UI
-
-### User Story 6: Gebruikersvoorkeuren opslaan
-
-**Als gebruiker** wil ik **dat mijn filterinstellingen worden onthouden** zodat ik **niet telkens opnieuw mijn voorkeuren hoef in te stellen als ik terugkom**.
+**Als gebruiker** wil ik **een account kunnen aanmaken en inloggen** zodat ik **een persoonlijke ervaring heb en mijn data wordt opgeslagen**.
 
 **Acceptatiecriteria:**
 
-- Actieve filters worden opgeslagen in localStorage
-- Bij terugkeer worden deze filters automatisch toegepast
-- Er is een knop om alle opgeslagen voorkeuren te resetten
-- Filtervoorkeuren worden alleen lokaal opgeslagen
+- Register form met validatie (email, password, confirm password, naam)
+- Login form met email/password
+- Password requirements (minimaal 8 karakters, hoofdletter, cijfer)
+- Error handling voor ongeldige login, duplicate email, etc.
+- "Remember me" checkbox voor langere sessies
+- Logout functionaliteit
+- Protected routes voor features zoals cart, profile, reviews
+- Session management via localStorage met expiration
+- Basic profile info tonen in header wanneer ingelogd
 
-### User Story 7: Responsive design verbetering
+**React concepten:**
 
-**Als mobiele gebruiker** wil ik **dat het dashboard optimaal werkt op mijn apparaat** zodat ik **gemakkelijk cursussen kan bekijken onderweg**.
+- Context API en useContext
+- Form handling en controlled components
+- Input validatie en error states
+- Conditional rendering op basis van auth status
+- localStorage voor session persistence
 
-**Acceptatiecriteria:**
+### User Story 6: Favorieten & Wishlist systeem
 
-- Dashboard schaalt correct op mobiele apparaten (smartphones en tablets)
-- Navigatie-elementen transformeren naar een hamburgermenu op kleine schermen
-- Touch-interacties zijn geoptimaliseerd voor mobiel gebruik
-- Inhoudsweergave past zich aan voor optimale leesbaarheid op kleine schermen
-
-## Could-have User Stories
-
-### User Story 8: Dark mode
-
-**Als gebruiker** wil ik **kunnen schakelen tussen light en dark mode** zodat ik **het dashboard kan bekijken op een manier die comfortabel is voor mijn ogen, vooral 's avonds**.
-
-**Acceptatiecriteria:**
-
-- Er is een schakelaar om tussen light en dark mode te wisselen
-- De gekozen modus wordt opgeslagen en onthouden
-- Alle elementen hebben aangepaste styling voor beide modi
-- De modus-voorkeur respecteert de systeeminstelling als standaard
-
-### User Story 9: Voortgang bijhouden
-
-**Als gebruiker** wil ik **kunnen bijhouden welke cursussen ik heb bekeken** zodat ik **mijn leervoortgang kan volgen**.
+**Als gebruiker** wil ik **cursussen kunnen markeren als favoriet en toevoegen aan een wishlist** zodat ik **een persoonlijke collectie kan maken van cursussen die me interesseren**.
 
 **Acceptatiecriteria:**
 
-- Bij elke cursus is een optie om deze te markeren als "bekeken"
-- Bekeken cursussen krijgen een visuele indicator
-- Er is een filter/tab om bekeken of onbekeken cursussen te tonen
-- Voortgangsinformatie wordt lokaal opgeslagen
+- Elke cursuskaart heeft zowel een "favoriet" als "wishlist" knop
+- Aparte pagina's/tabs voor favorieten en wishlist
+- Mogelijkheid om items van wishlist naar favorieten te verplaatsen
+- Teller badges die aantal items tonen
+- Alles wordt opgeslagen in localStorage met complexere data structuur
+- Alleen maar te zien als je bent ingelogd
 
-### User Story 10: Animaties toevoegen
+### User Story 6: Review & Rating systeem
 
-**Als gebruiker** wil ik **subtiele animaties zien bij interacties** zodat **de gebruikerservaring rijker en intuïtiever aanvoelt**.
+**Als gebruiker** wil ik **reviews kunnen lezen en schrijven voor cursussen** zodat ik **geïnformeerde beslissingen kan maken op basis van ervaringen van anderen**.
 
 **Acceptatiecriteria:**
 
-- Vloeiende overgangsanimaties bij filteren en sorteren
-- Hover-effecten op klikbare elementen
-- Laadanimaties tijdens het ophalen van data
-- Animaties zijn subtiel en niet afleidend
-- Animaties kunnen worden uitgeschakeld (voor toegankelijkheid)
+- Sterren rating systeem (1-5 sterren) per cursus
+- Mogelijkheid om geschreven reviews toe te voegen
+- Reviews tonen met gebruikersnaam, datum, rating en tekst
+- Gemiddelde rating berekenen en tonen op cursuskaarten
+- Filter cursussen op minimale rating
+- Review form met validatie (vereiste velden, karakterlimiet)
+- Reviews opslaan in localStorage
+
+### User Story 7: Shopping Cart functionaliteit
+
+**Als gebruiker** wil ik **cursussen kunnen toevoegen aan een winkelwagen** zodat ik **meerdere cursussen tegelijk kan "kopen"**.
+
+**Acceptatiecriteria:**
+
+- "Toevoegen aan cart" knop op elke cursuskaart
+- Floating cart icon met badge die aantal items toont
+- Cart modal/pagina met overzicht van toegevoegde cursussen
+- Mogelijkheid om items uit cart te verwijderen
+- Totaalprijs berekening
+- "Checkout" proces simuleren (geen echte betaling)
+- Cart state behouden tussen sessies
+- Toast notifications bij toevoegen/verwijderen
+
+### User Story 9: Geavanceerde filtering & zoeken
+
+**Als gebruiker** wil ik **cursussen filteren op meerdere criteria tegelijk** zodat ik **precies kan vinden wat ik zoek**.
+
+**Acceptatiecriteria:**
+
+- Filter op: categorie, moeilijkheidsgraad, rating, prijs range, duur
+- Multiple select voor categorieën
+- Slider voor prijs range
+- Checkbox filters voor moeilijkheidsgraad (beginner, intermediate, advanced)
+- Actieve filters tonen als "tags" die individueel verwijderd kunnen worden
+- "Clear all filters" knop
+- URL parameters voor deep linking van filter states
+- Filter state opslaan per gebruiker in localStorage (voor ingelogde users)
+- Guest users krijgen basic filtering, ingelogde users krijgen saved preferences
+
+---
+
+## Could-have Features (Prioriteit 3)
+
+### User Story 9: Gebruikersprofielen & Dashboard
+
+**Als gebruiker** wil ik **een persoonlijk profiel en dashboard** zodat ik **mijn leervoortgang kan bijhouden en beheren**.
+
+**Acceptatiecriteria:**
+
+- Gebruikersprofiel pagina met avatar upload (via file input)
+- Dashboard met overzicht van: ingeschreven cursussen, favorieten, wishlist, reviews
+- Leervoortgang tracking per cursus (percentage completed)
+- Totale leertijd bijhouden
+- Persoonlijke statistieken (aantal cursussen, gemiddelde rating gegeven, etc.)
+- Profile edit functionaliteit
+- Data opslaan in localStorage met complexe user object
+
+### User Story 10: Recently Viewed & Recommendations
+
+**Als gebruiker** wil ik **recent bekeken cursussen zien en aanbevelingen krijgen** zodat ik **gemakkelijk kan terugkeren naar interessante content**.
+
+**Acceptatiecriteria:**
+
+- "Recently viewed" sectie die laatste 5-10 bekeken cursussen toont
+- Aanbevelingen gebaseerd op bekeken cursussen (zelfde categorie/instructor)
+- "Omdat je X bekeken hebt" sectie
+- Slimme algoritme voor aanbevelingen (gebruik localStorage data)
+- Mogelijkheid om recent viewed te wissen
+- Time-based filtering (laatste week, maand)
+
+### User Story 11: Advanced Search & Autocomplete
+
+**Als gebruiker** wil ik **geavanceerde zoekmogelijkheden met suggesties** zodat ik **efficiënt kan vinden wat ik zoek**.
+
+**Acceptatiecriteria:**
+
+- Autocomplete dropdown met suggesties tijdens typen
+- Zoekgeschiedenis opslaan en tonen
+- "Did you mean..." functionaliteit voor typos
+- Zoeken in titel, beschrijving, instructor naam, en tags
+- Search highlights in resultaten
+- Voice search functionaliteit (Web Speech API)
+- Advanced search modal met filters gecombineerd
+
+---
+
+## Nice-to-have Features (Prioriteit 4)
+
+### User Story 12: Instructor Profiles & Follow System
+
+**Als gebruiker** wil ik **instructors kunnen volgen en hun profielen bekijken** zodat ik **op de hoogte blijf van nieuwe cursussen van mijn favoriete leraren**.
+
+**Acceptatiecriteria:**
+
+- Instructor profiel pagina's met bio, expertise, alle cursussen
+- "Follow" knop op instructor profielen
+- Notification systeem voor nieuwe cursussen van gevolgde instructors
+- Instructor statistics (aantal cursussen, gemiddelde rating, aantal studenten)
+- "Following" pagina met overzicht van gevolgde instructors
+- Filter cursussen op specific instructor
+
+### User Story 13: Learning Path & Progress Tracking
+
+**Als gebruiker** wil ik **leerpaden kunnen volgen en mijn voortgang bijhouden** zodat ik **gestructureerd kan leren naar een specifiek doel**.
+
+**Acceptatiecriteria:**
+
+- Pre-defined learning paths (bijv. "Web Development Beginner to Pro")
+- Visual progress indicators per learning path
+- Unlock system: volgende cursus wordt pas beschikbaar na completion
+- Certificates of completion voor paths
+- Time estimation per path
+- Bookmark functionaliteit binnen cursussen
+- Note-taking functionaliteit per cursus/module
+
+### User Story 14: Social Features & Study Groups
+
+**Als gebruiker** wil ik **kunnen communiceren met andere studenten** zodat ik **samen kan leren en vragen kan stellen**.
+
+**Acceptatiecriteria:**
+
+- Q&A sectie per cursus waar studenten vragen kunnen stellen
+- Upvote/downvote systeem voor vragen en antwoorden
+- Study group creation en joining
+- Discussion forums per cursus categorie
+- Private messaging tussen studenten
+- Student leaderboards per cursus
