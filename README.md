@@ -16,12 +16,33 @@ Het project bestaat uit verschillende mappen:
 - `src/styles/`: Hier staan de CSS bestanden voor de opmaak
 
 ## Hoe begin je?
-1. **Fork het project**: Maak een kopie van dit project naar je eigen GitHub account
-2. **Clone je fork**: Download je kopie naar je computer met GitHub Desktop
-3. **Installeer wat nodig is**: Open een terminal en typ `npm install`
-4. **Start het project**: Typ `npm run dev` in de terminal
-5. **Bekijk de website**: Open je browser en ga naar `http://localhost:5173`
-6. **Maak voor elke opdracht een aparte branch**: Zo houd je je werk netjes gescheiden
+
+1. **Clone het project** (NIET forken!)
+   
+2. **Verwijder de originele remote**:
+   ```bash
+   git remote remove origin
+   ```
+
+3. **Maak een nieuwe repository aan** op jouw GitHub account:
+   * Ga naar GitHub → "New repository"
+   * Geef het een naam (bijv. "CodeCampus-Team-[jullie namen]")
+   * Maak het **Private** aan
+   * Voeg GEEN README, .gitignore of license toe (die bestaan al)
+
+4. **Koppel je lokale code aan je nieuwe repository**:
+   ```bash
+   git remote add origin https://github.com/[jouw-username]/[repository-naam].git
+   git push -u origin main
+   ```
+
+5. **Installeer wat nodig is**: Open een terminal en typ `npm install`
+
+6. **Start het project**: Typ `npm run dev` in de terminal
+
+7. **Bekijk de website**: Open je browser en ga naar `http://localhost:5173`
+
+8. **Maak voor elke opdracht een aparte branch**: Zo houd je je werk netjes gescheiden
 
 > **Tip:** Sla je werk regelmatig op met commits en push deze naar GitHub!
 
@@ -50,10 +71,5 @@ Voor elke opdracht zijn er tests die laten zien of jouw oplossing werkt. We zull
 - Werken met gegevens in een website
 - Een website maken die er op alle schermen goed uitziet
 
-## Hulp nodig?
-- [React uitleg](https://react.dev/learn)
-- [Vite uitleg](https://vitejs.dev/guide/)
-- [MDN Web Docs](https://developer.mozilla.org/en-US/)
-- [CSS tips en trucs](https://css-tricks.com/)
 
 
