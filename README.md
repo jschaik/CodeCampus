@@ -17,32 +17,16 @@ Het project bestaat uit verschillende mappen:
 
 ## Hoe begin je?
 
-1. **Clone het project** (NIET forken!)
-   
-2. **Verwijder de originele remote**:
-   ```bash
-   git remote remove origin
-   ```
-
-3. **Maak een nieuwe repository aan** op jouw GitHub account:
-   * Ga naar GitHub → "New repository"
-   * Geef het een naam (bijv. "CodeCampus-Team-[jullie namen]")
-   * Maak het **Private** aan
-   * Voeg GEEN README, .gitignore of license toe (die bestaan al)
-
-4. **Koppel je lokale code aan je nieuwe repository**:
-   ```bash
-   git remote add origin https://github.com/[jouw-username]/[repository-naam].git
-   git push -u origin main
-   ```
-
-5. **Installeer wat nodig is**: Open een terminal en typ `npm install`
-
-6. **Start het project**: Typ `npm run dev` in de terminal
-
-7. **Bekijk de website**: Open je browser en ga naar `http://localhost:5173`
-
-8. **Maak voor elke opdracht een aparte branch**: Zo houd je je werk netjes gescheiden
+1. Ga naar https://github.com/jschaik/CodeCampus
+2. Klik op "Use this template" → "Create a new repository"
+3. Naam: "CodeCampus-Team-[jullie-namen]"
+4. Maak het **Private**
+5. Klik "Create repository"
+6. Clone je nieuwe repository naar je computer (met GitHub Desktop of git clone)
+7. **Installeer wat nodig is**: Open een terminal en typ `npm install`
+8. **Start het project**: Typ `npm run dev` in de terminal
+9. **Bekijk de website**: Open je browser en ga naar `http://localhost:5173`
+10. **Maak voor elke opdracht/user story een aparte branch**: Zo houd je je werk netjes gescheiden
 
 > **Tip:** Sla je werk regelmatig op met commits en push deze naar GitHub!
 
@@ -70,6 +54,3 @@ Voor elke opdracht zijn er tests die laten zien of jouw oplossing werkt. We zull
 - Nieuwe functies maken in een bestaand project
 - Werken met gegevens in een website
 - Een website maken die er op alle schermen goed uitziet
-
-
-
