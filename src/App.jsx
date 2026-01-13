@@ -21,6 +21,8 @@ function App() {
 
         setTimeout(fetchData, 1000);
     }, []);
+
+
     
 
     return (
