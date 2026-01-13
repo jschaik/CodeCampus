@@ -22,9 +22,6 @@ function App() {
         setTimeout(fetchData, 1000);
     }, []);
 
-
-    
-
     return (
         <main className='app'>
             <header className='app-header'>
