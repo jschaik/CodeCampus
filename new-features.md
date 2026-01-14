@@ -185,7 +185,7 @@ Na het oplossen van alle bugs kunnen teams kiezen uit onderstaande user stories 
 
 ---
 
-## Nice-to-have Features (Prioriteit 4)
+## Would-like Features (Prioriteit 4)
 
 ### User Story 13: Instructor Profiles & Follow System
 
