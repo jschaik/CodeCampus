@@ -93,7 +93,7 @@ Na het oplossen van alle bugs kunnen teams kiezen uit onderstaande user stories 
 - Alles wordt opgeslagen in localStorage met complexere data structuur
 - Alleen maar te zien als je bent ingelogd
 
-### User Story 6: Review & Rating systeem
+### User Story 7: Review & Rating systeem
 
 **Als gebruiker** wil ik **reviews kunnen lezen en schrijven voor cursussen** zodat ik **geïnformeerde beslissingen kan maken op basis van ervaringen van anderen**.
 
@@ -107,7 +107,7 @@ Na het oplossen van alle bugs kunnen teams kiezen uit onderstaande user stories 
 - Review form met validatie (vereiste velden, karakterlimiet)
 - Reviews opslaan in localStorage
 
-### User Story 7: Shopping Cart functionaliteit
+### User Story 8: Shopping Cart functionaliteit
 
 **Als gebruiker** wil ik **cursussen kunnen toevoegen aan een winkelwagen** zodat ik **meerdere cursussen tegelijk kan "kopen"**.
 
@@ -142,7 +142,7 @@ Na het oplossen van alle bugs kunnen teams kiezen uit onderstaande user stories 
 
 ## Could-have Features (Prioriteit 3)
 
-### User Story 9: Gebruikersprofielen & Dashboard
+### User Story 10: Gebruikersprofielen & Dashboard
 
 **Als gebruiker** wil ik **een persoonlijk profiel en dashboard** zodat ik **mijn leervoortgang kan bijhouden en beheren**.
 
@@ -156,7 +156,7 @@ Na het oplossen van alle bugs kunnen teams kiezen uit onderstaande user stories 
 - Profile edit functionaliteit
 - Data opslaan in localStorage met complexe user object
 
-### User Story 10: Recently Viewed & Recommendations
+### User Story 11: Recently Viewed & Recommendations
 
 **Als gebruiker** wil ik **recent bekeken cursussen zien en aanbevelingen krijgen** zodat ik **gemakkelijk kan terugkeren naar interessante content**.
 
@@ -169,7 +169,7 @@ Na het oplossen van alle bugs kunnen teams kiezen uit onderstaande user stories 
 - Mogelijkheid om recent viewed te wissen
 - Time-based filtering (laatste week, maand)
 
-### User Story 11: Advanced Search & Autocomplete
+### User Story 12: Advanced Search & Autocomplete
 
 **Als gebruiker** wil ik **geavanceerde zoekmogelijkheden met suggesties** zodat ik **efficiënt kan vinden wat ik zoek**.
 
@@ -187,7 +187,7 @@ Na het oplossen van alle bugs kunnen teams kiezen uit onderstaande user stories 
 
 ## Nice-to-have Features (Prioriteit 4)
 
-### User Story 12: Instructor Profiles & Follow System
+### User Story 13: Instructor Profiles & Follow System
 
 **Als gebruiker** wil ik **instructors kunnen volgen en hun profielen bekijken** zodat ik **op de hoogte blijf van nieuwe cursussen van mijn favoriete leraren**.
 
@@ -200,7 +200,7 @@ Na het oplossen van alle bugs kunnen teams kiezen uit onderstaande user stories 
 - "Following" pagina met overzicht van gevolgde instructors
 - Filter cursussen op specific instructor
 
-### User Story 13: Learning Path & Progress Tracking
+### User Story 14: Learning Path & Progress Tracking
 
 **Als gebruiker** wil ik **leerpaden kunnen volgen en mijn voortgang bijhouden** zodat ik **gestructureerd kan leren naar een specifiek doel**.
 
@@ -214,7 +214,7 @@ Na het oplossen van alle bugs kunnen teams kiezen uit onderstaande user stories 
 - Bookmark functionaliteit binnen cursussen
 - Note-taking functionaliteit per cursus/module
 
-### User Story 14: Social Features & Study Groups
+### User Story 15: Social Features & Study Groups
 
 **Als gebruiker** wil ik **kunnen communiceren met andere studenten** zodat ik **samen kan leren en vragen kan stellen**.
 
