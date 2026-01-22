@@ -14,7 +14,7 @@ Na het oplossen van alle bugs kunnen teams kiezen uit onderstaande user stories 
 
 - Er is een zoekbalk zichtbaar bovenaan het dashboard
 - Bij het typen worden resultaten direct gefilterd (zonder pagina te verversen)
-- Zoeken werkt op cursustitel en beschrijving
+- Zoeken werkt op cursustitel
 - Als er geen resultaten zijn, wordt een melding getoond
 - De zoekfunctie werkt in combinatie met eventuele actieve filters
 
@@ -36,7 +36,7 @@ Na het oplossen van alle bugs kunnen teams kiezen uit onderstaande user stories 
 **Acceptatiecriteria:**
 
 - Bij klikken op een cursuskaart verschijnt een modal of detailpagina
-- De detailweergave toont uitgebreide beschrijving, leerdoelen, en andere relevante info
+- De detailweergave toont uitgebreide beschrijving en andere relevante info uit het databestand
 - Er is een knop om direct naar de video te gaan
 - Er is een knop om terug te gaan naar het overzicht
 
@@ -46,7 +46,7 @@ Na het oplossen van alle bugs kunnen teams kiezen uit onderstaande user stories 
 
 **Acceptatiecriteria:**
 
-- Er is een sectie/component waar categorieën worden getoond
+- Er is een sectie waar categorieën worden getoond, zoals "javascript", "python" etc.
 - Meerdere categorieën kunnen tegelijk geselecteerd worden
 - Geselecteerde categorieën worden visueel gemarkeerd
 - Bij selectie worden alleen relevante cursussen getoond
@@ -66,15 +66,12 @@ Na het oplossen van alle bugs kunnen teams kiezen uit onderstaande user stories 
 - Login form met email/password
 - Password requirements (minimaal 8 karakters, hoofdletter, cijfer)
 - Error handling voor ongeldige login, duplicate email, etc.
-- "Remember me" checkbox voor langere sessies
 - Logout functionaliteit
 - Protected routes voor features zoals cart, profile, reviews
 - Session management via localStorage met expiration
 - Basic profile info tonen in header wanneer ingelogd
 
 **React concepten:**
-
-- Context API en useContext
 - Form handling en controlled components
 - Input validatie en error states
 - Conditional rendering op basis van auth status
@@ -90,7 +87,7 @@ Na het oplossen van alle bugs kunnen teams kiezen uit onderstaande user stories 
 - Aparte pagina's/tabs voor favorieten en wishlist
 - Mogelijkheid om items van wishlist naar favorieten te verplaatsen
 - Teller badges die aantal items tonen
-- Alles wordt opgeslagen in localStorage met complexere data structuur
+- Alles wordt opgeslagen in localStorage
 - Alleen maar te zien als je bent ingelogd
 
 ### User Story 7: Review & Rating systeem
@@ -102,7 +99,6 @@ Na het oplossen van alle bugs kunnen teams kiezen uit onderstaande user stories 
 - Sterren rating systeem (1-5 sterren) per cursus
 - Mogelijkheid om geschreven reviews toe te voegen
 - Reviews tonen met gebruikersnaam, datum, rating en tekst
-- Gemiddelde rating berekenen en tonen op cursuskaarten
 - Filter cursussen op minimale rating
 - Review form met validatie (vereiste velden, karakterlimiet)
 - Reviews opslaan in localStorage
@@ -122,27 +118,11 @@ Na het oplossen van alle bugs kunnen teams kiezen uit onderstaande user stories 
 - Cart state behouden tussen sessies
 - Toast notifications bij toevoegen/verwijderen
 
-### User Story 9: Geavanceerde filtering & zoeken
-
-**Als gebruiker** wil ik **cursussen filteren op meerdere criteria tegelijk** zodat ik **precies kan vinden wat ik zoek**.
-
-**Acceptatiecriteria:**
-
-- Filter op: categorie, moeilijkheidsgraad, rating, prijs range, duur
-- Multiple select voor categorieën
-- Slider voor prijs range
-- Checkbox filters voor moeilijkheidsgraad (beginner, intermediate, advanced)
-- Actieve filters tonen als "tags" die individueel verwijderd kunnen worden
-- "Clear all filters" knop
-- URL parameters voor deep linking van filter states
-- Filter state opslaan per gebruiker in localStorage (voor ingelogde users)
-- Guest users krijgen basic filtering, ingelogde users krijgen saved preferences
-
 ---
 
 ## Could-have Features (Prioriteit 3)
 
-### User Story 10: Gebruikersprofielen & Dashboard
+### User Story 9: Gebruikersprofielen & Dashboard
 
 **Als gebruiker** wil ik **een persoonlijk profiel en dashboard** zodat ik **mijn leervoortgang kan bijhouden en beheren**.
 
@@ -156,7 +136,7 @@ Na het oplossen van alle bugs kunnen teams kiezen uit onderstaande user stories 
 - Profile edit functionaliteit
 - Data opslaan in localStorage met complexe user object
 
-### User Story 11: Recently Viewed & Recommendations
+### User Story 10: Recently Viewed & Recommendations
 
 **Als gebruiker** wil ik **recent bekeken cursussen zien en aanbevelingen krijgen** zodat ik **gemakkelijk kan terugkeren naar interessante content**.
 
@@ -169,7 +149,7 @@ Na het oplossen van alle bugs kunnen teams kiezen uit onderstaande user stories 
 - Mogelijkheid om recent viewed te wissen
 - Time-based filtering (laatste week, maand)
 
-### User Story 12: Advanced Search & Autocomplete
+### User Story 11: Advanced Search & Autocomplete
 
 **Als gebruiker** wil ik **geavanceerde zoekmogelijkheden met suggesties** zodat ik **efficiënt kan vinden wat ik zoek**.
 
@@ -184,45 +164,3 @@ Na het oplossen van alle bugs kunnen teams kiezen uit onderstaande user stories 
 - Advanced search modal met filters gecombineerd
 
 ---
-
-## Would-like Features (Prioriteit 4)
-
-### User Story 13: Instructor Profiles & Follow System
-
-**Als gebruiker** wil ik **instructors kunnen volgen en hun profielen bekijken** zodat ik **op de hoogte blijf van nieuwe cursussen van mijn favoriete leraren**.
-
-**Acceptatiecriteria:**
-
-- Instructor profiel pagina's met bio, expertise, alle cursussen
-- "Follow" knop op instructor profielen
-- Notification systeem voor nieuwe cursussen van gevolgde instructors
-- Instructor statistics (aantal cursussen, gemiddelde rating, aantal studenten)
-- "Following" pagina met overzicht van gevolgde instructors
-- Filter cursussen op specific instructor
-
-### User Story 14: Learning Path & Progress Tracking
-
-**Als gebruiker** wil ik **leerpaden kunnen volgen en mijn voortgang bijhouden** zodat ik **gestructureerd kan leren naar een specifiek doel**.
-
-**Acceptatiecriteria:**
-
-- Pre-defined learning paths (bijv. "Web Development Beginner to Pro")
-- Visual progress indicators per learning path
-- Unlock system: volgende cursus wordt pas beschikbaar na completion
-- Certificates of completion voor paths
-- Time estimation per path
-- Bookmark functionaliteit binnen cursussen
-- Note-taking functionaliteit per cursus/module
-
-### User Story 15: Social Features & Study Groups
-
-**Als gebruiker** wil ik **kunnen communiceren met andere studenten** zodat ik **samen kan leren en vragen kan stellen**.
-
-**Acceptatiecriteria:**
-
-- Q&A sectie per cursus waar studenten vragen kunnen stellen
-- Upvote/downvote systeem voor vragen en antwoorden
-- Study group creation en joining
-- Discussion forums per cursus categorie
-- Private messaging tussen studenten
-- Student leaderboards per cursus
