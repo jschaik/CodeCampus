@@ -36,7 +36,7 @@ Na het oplossen van alle bugs kunnen teams kiezen uit onderstaande user stories 
 **Acceptatiecriteria:**
 
 - Bij klikken op een cursuskaart verschijnt een modal of detailpagina
-- De detailweergave toont uitgebreide beschrijving en andere relevante info uit het databestand
+- De detailweergave toont: titel, beschrijving, instructor, duur, rating, aantal views, prijs
 - Er is een knop om direct naar de video te gaan
 - Er is een knop om terug te gaan naar het overzicht
 
@@ -46,51 +46,104 @@ Na het oplossen van alle bugs kunnen teams kiezen uit onderstaande user stories 
 
 **Acceptatiecriteria:**
 
-- Er is een sectie waar categorieën worden getoond, zoals "javascript", "python" etc.
+- Er is een sectie waar categorieën worden getoond (gebruik de 'category' veld uit coursesData)
 - Meerdere categorieën kunnen tegelijk geselecteerd worden
 - Geselecteerde categorieën worden visueel gemarkeerd
 - Bij selectie worden alleen relevante cursussen getoond
 - Er is een optie om alle filters te wissen
 
+### User Story 5: Dark Mode Toggle
+
+**Als gebruiker** wil ik **kunnen schakelen tussen light en dark mode** zodat ik **de app kan gebruiken op een manier die prettig is voor mijn ogen**.
+
+**Acceptatiecriteria:**
+
+- Toggle knop/switch in de header (zon/maan icoontje)
+- Bij klikken wisselt de app tussen light en dark theme
+- Dark mode gebruikt donkere achtergrondkleuren en lichte tekst
+- Voorkeur wordt opgeslagen in localStorage
+- Bij herladen van de pagina blijft de gekozen mode actief
+- Smooth transition tussen de modes (CSS transition)
+
+### User Story 6: Cursus Progress Indicator
+
+**Als gebruiker** wil ik **een visuele voortgangsbalk zien bij elke cursus** zodat ik **in één oogopslag kan zien hoeveel van de cursus ik al heb gekeken**.
+
+**Acceptatiecriteria:**
+
+- Elke cursuskaart toont een progress bar onderaan
+- Progress bar toont percentage (0-100%)
+- Knop "Markeer als bekeken" of slider om voortgang aan te passen
+- Voortgang wordt opgeslagen per cursus in localStorage
+- Visuele feedback: progress bar heeft kleur (bijv. groen voor >75%, oranje voor 25-75%, grijs voor <25%)
+- Filter optie: "In Progress" cursussen tonen
+
+### User Story 7: View Counter & "Trending Now"
+
+**Als gebruiker** wil ik **zien welke cursussen populair zijn** zodat ik **weet wat andere gebruikers interessant vinden**.
+
+**Acceptatiecriteria:**
+
+- Bij openen van cursus details wordt view counter verhoogd
+- View count wordt getoond op cursuskaart (bijv. "👁️ 234 views")
+- "Trending Now" sectie toont top 3-5 meest bekeken cursussen van afgelopen week
+- Views worden opgeslagen in localStorage met timestamp
+- Badge "🔥 Trending" voor cursussen met >X views deze week
+
+### User Story 8: Cursus Notities
+
+**Als gebruiker** wil ik **notities kunnen toevoegen bij cursussen** zodat ik **belangrijke informatie kan onthouden**.
+
+**Acceptatiecriteria:**
+
+- "Notitie toevoegen" knop bij cursus details
+- Textarea waar gebruiker notitie kan typen
+- "Opslaan" knop om notitie toe te voegen
+- Notities worden opgeslagen per cursus in localStorage
+- Lijst met alle notities tonen onder de cursus
+- Elke notitie heeft timestamp
+- Badge op cursuskaart als er notities zijn (bijv. "📝 3")
+
 ---
 
 ## Should-have Features (Prioriteit 2)
 
-### User Story 5: Gebruikersauthenticatie (Login/Register)
+### User Story 9: Gebruikersauthenticatie (Login/Register)
 
 **Als gebruiker** wil ik **een account kunnen aanmaken en inloggen** zodat ik **een persoonlijke ervaring heb en mijn data wordt opgeslagen**.
 
 **Acceptatiecriteria:**
 
-- Register form met validatie (email, password, confirm password, naam)
-- Login form met email/password
-- Password requirements (minimaal 8 karakters, hoofdletter, cijfer)
-- Error handling voor ongeldige login, duplicate email, etc.
-- Logout functionaliteit
-- Protected routes voor features zoals cart, profile, reviews
-- Session management via localStorage met expiration
-- Basic profile info tonen in header wanneer ingelogd
+- Register pagina met form (email, wachtwoord, wachtwoord bevestigen, naam)
+- Login pagina met form (email, wachtwoord)
+- Basis validatie:
+  - Email moet geldig formaat hebben
+  - Wachtwoord minimaal 6 karakters
+  - Wachtwoorden moeten matchen bij registratie
+- Error messages tonen bij ongeldige invoer
+- Bij succesvolle registratie wordt gebruiker automatisch ingelogd
+- Bij succesvolle login wordt gebruiker doorgestuurd naar dashboard
+- Logout functionaliteit (knop in header)
+- Gebruikersnaam tonen in header wanneer ingelogd
+- Gebruikersdata opslaan in localStorage (email, naam, id)
+- Ingelogde status blijft bewaard na page refresh
 
-**React concepten:**
-- Form handling en controlled components
-- Input validatie en error states
-- Conditional rendering op basis van auth status
-- localStorage voor session persistence
-
-### User Story 6: Favorieten & Wishlist systeem
+### User Story 10: Favorieten & Wishlist systeem
 
 **Als gebruiker** wil ik **cursussen kunnen markeren als favoriet en toevoegen aan een wishlist** zodat ik **een persoonlijke collectie kan maken van cursussen die me interesseren**.
 
 **Acceptatiecriteria:**
 
-- Elke cursuskaart heeft zowel een "favoriet" als "wishlist" knop
-- Aparte pagina's/tabs voor favorieten en wishlist
-- Mogelijkheid om items van wishlist naar favorieten te verplaatsen
-- Teller badges die aantal items tonen
-- Alles wordt opgeslagen in localStorage
-- Alleen maar te zien als je bent ingelogd
+- Elke cursuskaart heeft een "favoriet" (hartje) én "wishlist" knop
+- Deze knoppen zijn alleen zichtbaar wanneer ingelogd
+- Aparte pagina's of tabs voor "Mijn Favorieten" en "Mijn Wishlist"
+- Mogelijkheid om item van wishlist naar favorieten te verplaatsen (of andersom)
+- Badge in navigatie toont aantal items
+- Data wordt per gebruiker opgeslagen in localStorage
+- Bij logout blijven favorieten/wishlist bewaard voor die gebruiker
+- Bij nieuwe login worden eigen favorieten/wishlist weer geladen
 
-### User Story 7: Review & Rating systeem
+### User Story 11: Review & Rating systeem
 
 **Als gebruiker** wil ik **reviews kunnen lezen en schrijven voor cursussen** zodat ik **geïnformeerde beslissingen kan maken op basis van ervaringen van anderen**.
 
@@ -101,9 +154,11 @@ Na het oplossen van alle bugs kunnen teams kiezen uit onderstaande user stories 
 - Reviews tonen met gebruikersnaam, datum, rating en tekst
 - Filter cursussen op minimale rating
 - Review form met validatie (vereiste velden, karakterlimiet)
+- Elke gebruiker kan maar 1 review per cursus schrijven
+- Edit/delete eigen review
 - Reviews opslaan in localStorage
 
-### User Story 8: Shopping Cart functionaliteit
+### User Story 12: Shopping Cart functionaliteit
 
 **Als gebruiker** wil ik **cursussen kunnen toevoegen aan een winkelwagen** zodat ik **meerdere cursussen tegelijk kan "kopen"**.
 
@@ -122,7 +177,36 @@ Na het oplossen van alle bugs kunnen teams kiezen uit onderstaande user stories 
 
 ## Could-have Features (Prioriteit 3)
 
-### User Story 9: Gebruikersprofielen & Dashboard
+### User Story 13: "Quick Start" Cursus Suggestie
+
+**Als nieuwe gebruiker** wil ik **een "Begin hier" suggestie zien** zodat ik **weet waar ik moet starten**.
+
+**Acceptatiecriteria:**
+
+- Banner/card bovenaan dashboard met "Aanbevolen voor jou" cursus
+- Logica: toon random beginner cursus met hoogste rating
+- "Start deze cursus" call-to-action knop
+- Optie om suggestie te dismissen
+- Na dismiss wordt een nieuwe suggestie getoond
+- Dismissed cursussen worden onthouden (localStorage)
+
+### User Story 14: Completion Badges / Achievements
+
+**Als gebruiker** wil ik **badges verdienen** zodat ik **gemotiveerd blijf om cursussen af te maken**.
+
+**Acceptatiecriteria:**
+
+- Badges verdienen bij mijlpalen:
+  - "First Step" - eerste cursus bekeken
+  - "Knowledge Seeker" - 5 cursussen bekeken
+  - "Expert" - 10 cursussen bekeken
+  - "Category Master" - alle cursussen in 1 categorie bekeken
+- Badge collectie pagina of sectie
+- Notification/toast wanneer badge wordt verdiend
+- Badges opslaan in localStorage
+- Visuele badges (emoji's of icons zijn genoeg)
+
+### User Story 15: Gebruikersprofielen & Dashboard
 
 **Als gebruiker** wil ik **een persoonlijk profiel en dashboard** zodat ik **mijn leervoortgang kan bijhouden en beheren**.
 
@@ -136,7 +220,7 @@ Na het oplossen van alle bugs kunnen teams kiezen uit onderstaande user stories 
 - Profile edit functionaliteit
 - Data opslaan in localStorage met complexe user object
 
-### User Story 10: Recently Viewed & Recommendations
+### User Story 16: Recently Viewed & Recommendations
 
 **Als gebruiker** wil ik **recent bekeken cursussen zien en aanbevelingen krijgen** zodat ik **gemakkelijk kan terugkeren naar interessante content**.
 
@@ -149,7 +233,7 @@ Na het oplossen van alle bugs kunnen teams kiezen uit onderstaande user stories 
 - Mogelijkheid om recent viewed te wissen
 - Time-based filtering (laatste week, maand)
 
-### User Story 11: Advanced Search & Autocomplete
+### User Story 17: Advanced Search & Autocomplete
 
 **Als gebruiker** wil ik **geavanceerde zoekmogelijkheden met suggesties** zodat ik **efficiënt kan vinden wat ik zoek**.
 
@@ -162,5 +246,17 @@ Na het oplossen van alle bugs kunnen teams kiezen uit onderstaande user stories 
 - Search highlights in resultaten
 - Voice search functionaliteit (Web Speech API)
 - Advanced search modal met filters gecombineerd
+
+### User Story 18: Protected Routes & Navigation Guards
+
+**Als systeem** wil ik **bepaalde pagina's alleen toegankelijk maken voor ingelogde gebruikers** zodat **niet-ingelogde gebruikers geen toegang hebben tot persoonlijke features**.
+
+**Acceptatiecriteria:**
+
+- Routes zoals /profile, /favorites, /wishlist, /cart zijn protected
+- Bij poging om protected route te bezoeken zonder login: redirect naar /login
+- Na succesvolle login: redirect naar de pagina waar gebruiker naartoe wilde
+- Toast/melding: "Je moet ingelogd zijn om deze pagina te bekijken"
+- Navigatie items voor protected pages alleen tonen wanneer ingelogd
 
 ---
